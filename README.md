@@ -2,7 +2,7 @@
 
 
 ## docker-compose.yml
-
+```
 version: "3.8"
 
 services:
@@ -34,26 +34,26 @@ services:
             - 9104:9104
         environment:
             DATA_SOURCE_NAME: "root:password@(mariadb:3306)/test"
-
+```
 
 ## prometheus.yml
-
+```
 scrape_configs:
   - job_name: prometheus
     scrape_interval: 5s
     static_configs:
       - targets: ["localhost:9090", "mysqld-exporter:9104"]
-
+```
 
 ## mariadb.sql
-
+```
 CREATE USER 'root'@'%' IDENTIFIED BY 'password';
 GRANT PROCESS, REPLICATION CLIENT ON *.* TO 'root'@'%';
 GRANT SELECT ON performance_schema.* TO 'root'@'%';
-
+```
 
 ## MariaDB commands
-
+```
 MariaDB [(none)]> use test
 Database changed
 MariaDB [test]> CREATE TABLE users (id INT PRIMARY KEY, firstname VARCHAR(255), lastname VARCHAR(255));
@@ -65,9 +65,9 @@ Query OK, 1 row affected (0.032 sec)
 MariaDB [test]> UPDATE users SET firstname = "toto" WHERE lastname = "tutu";
 Query OK, 1 row affected (0.008 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
-
+```
 
 ## Prometheus screenshots
 
-https://media.discordapp.net/attachments/772811914136387614/772847228662317126/telechargement.png?width=711&height=702
+![](https://media.discordapp.net/attachments/772811914136387614/772847228662317126/telechargement.png?width=711&height=702)
 
