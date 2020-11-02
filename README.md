@@ -69,5 +69,5 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 ## Prometheus screenshots
 
-!(https://media.discordapp.net/attachments/772811914136387614/772847228662317126/telechargement.png?width=711&height=702)
+https://media.discordapp.net/attachments/772811914136387614/772847228662317126/telechargement.png?width=711&height=702
 
